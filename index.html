@@ -61,6 +61,49 @@
       font-style: italic;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 680px) {
+      main { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.75rem; margin-bottom: 1.25rem; }
+      .scroll { overflow-x: visible; background: transparent; border: none; border-radius: 0; }
+      table { min-width: 0; table-layout: auto; }
+      thead { display: none; }
+      tbody { display: block; }
+      tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      tbody tr:last-child { margin-bottom: 0; }
+      tbody th, tbody td { display: block; width: auto; }
+      tbody th {
+        padding: 0.75rem 1rem;
+        font-size: 1.05rem;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.6rem 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+      tbody tr:last-child td:last-child { border-bottom: none; }
+      tbody td::before {
+        content: attr(data-dia);
+        flex-shrink: 0;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .celda { display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
+      .celda .turno { margin-bottom: 0; }
+    }
   </style>
 </head>
 <body>
@@ -77,11 +120,11 @@
         <tbody>
           <tr>
             <th>5 – 11 de octubre<span class="anio">2026</span></th>
-            <td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="libre">Libre</span></td><td><span class="libre">Libre</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td>
+            <td data-dia="Lunes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Martes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Miércoles"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Jueves"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Viernes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Sábado"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Domingo"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td>
           </tr>
           <tr>
             <th>12 – 18 de octubre<span class="anio">2026</span></th>
-            <td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="libre">Libre</span></td><td><span class="libre">Libre</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td>
+            <td data-dia="Lunes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Martes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Miércoles"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Jueves"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Viernes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Sábado"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Domingo"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td>
           </tr>
         </tbody>
       </table>
