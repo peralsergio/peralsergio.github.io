@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horarios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2f6;
+      --surface: #ffffff;
+      --ink: #1c2a3a;
+      --muted: #6b7a8c;
+      --line: #d5dde6;
+      --shift-bg: #dbe8f7;
+      --shift-ink: #1f4f8a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141b24;
+        --surface: #1c2531;
+        --ink: #e3e9f0;
+        --muted: #8d9bab;
+        --line: #2c3846;
+        --shift-bg: #1f3a5c;
+        --shift-ink: #bcd6f5;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.25rem; }
+    h1 { font-size: 2.25rem; margin: 0 0 1.5rem; letter-spacing: -0.01em; }
+    .scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; min-width: 760px; }
+    th, td { padding: 0.75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    thead th { color: var(--muted); font-weight: 700; font-size: 0.9rem; }
+    tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+    tbody th { white-space: nowrap; font-weight: 700; }
+    .turno {
+      display: block;
+      width: fit-content;
+      margin-bottom: 0.3rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+      background: var(--shift-bg);
+      color: var(--shift-ink);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Horarios</h1>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Semana</th><th>Lunes</th><th>Martes</th><th>Miércoles</th>
+            <th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>12/10 – 18/10</th>
+            <td>
+              <span class="turno">13:00 – 16:00</span>
+              <span class="turno">20:00 – 23:00</span>
+            </td>
+            <td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
