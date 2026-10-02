@@ -39,11 +39,12 @@
     main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.25rem; }
     h1 { font-size: 2.25rem; margin: 0 0 1.5rem; letter-spacing: -0.01em; }
     .scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
-    table { border-collapse: collapse; width: 100%; min-width: 760px; }
-    th, td { padding: 0.75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    table { border-collapse: collapse; width: 100%; min-width: 900px; table-layout: fixed; }
+    th, td { width: 12.5%; padding: 0.75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
     thead th { color: var(--muted); font-weight: 700; font-size: 0.9rem; }
     tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
-    tbody th { white-space: nowrap; font-weight: 700; }
+    tbody th { font-weight: 700; }
+    .anio { display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.8rem; color: var(--muted); }
     .turno {
       display: block;
       width: fit-content;
@@ -54,6 +55,11 @@
       color: var(--shift-ink);
       font-size: 0.9rem;
       white-space: nowrap;
+    }
+    .libre {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -70,12 +76,12 @@
         </thead>
         <tbody>
           <tr>
-            <th>12/10 – 18/10</th>
-            <td>
-              <span class="turno">13:00 – 16:00</span>
-              <span class="turno">20:00 – 23:00</span>
-            </td>
-            <td></td><td></td><td></td><td></td><td></td><td></td>
+            <th>5 – 11 de octubre<span class="anio">2026</span></th>
+            <td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="libre">Libre</span></td><td><span class="libre">Libre</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td>
+          </tr>
+          <tr>
+            <th>12 – 18 de octubre<span class="anio">2026</span></th>
+            <td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="libre">Libre</span></td><td><span class="libre">Libre</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td><td><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></td>
           </tr>
         </tbody>
       </table>
