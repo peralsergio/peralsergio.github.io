@@ -70,7 +70,8 @@
       thead { display: none; }
       tbody { display: block; }
       tbody tr {
-        display: block;
+        display: grid;
+        grid-template-rows: auto repeat(7, 1fr);
         margin-bottom: 1rem;
         background: var(--surface);
         border: 1px solid var(--line);
@@ -125,6 +126,10 @@
           <tr>
             <th>12 – 18 de octubre<span class="anio">2026</span></th>
             <td data-dia="Lunes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Martes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Miércoles"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Jueves"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Viernes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Sábado"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Domingo"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td>
+          </tr>
+          <tr>
+            <th>19 – 25 de octubre<span class="anio">2026</span></th>
+            <td data-dia="Lunes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Martes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Miércoles"><div class="celda"><span class="turno">08:00 – 14:00</span></div></td><td data-dia="Jueves"><div class="celda"><span class="turno">08:00 – 14:00</span></div></td><td data-dia="Viernes"><div class="celda"><span class="turno">08:00 – 14:00</span></div></td><td data-dia="Sábado"><div class="celda"><span class="turno">08:00 – 14:00</span></div></td><td data-dia="Domingo"><div class="celda"><span class="turno">08:00 – 14:00</span></div></td>
           </tr>
         </tbody>
       </table>
