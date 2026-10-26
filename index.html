@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horarios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef2f6;
+      --surface: #ffffff;
+      --ink: #1c2a3a;
+      --muted: #6b7a8c;
+      --line: #d5dde6;
+      --shift-bg: #dbe8f7;
+      --shift-ink: #1f4f8a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #141b24;
+        --surface: #1c2531;
+        --ink: #e3e9f0;
+        --muted: #8d9bab;
+        --line: #2c3846;
+        --shift-bg: #1f3a5c;
+        --shift-ink: #bcd6f5;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.25rem; }
+    h1 { font-size: 2.25rem; margin: 0 0 1.5rem; letter-spacing: -0.01em; }
+    .scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+    table { border-collapse: collapse; width: 100%; min-width: 900px; table-layout: fixed; }
+    th, td { width: 12.5%; padding: 0.75rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+    thead th { color: var(--muted); font-weight: 700; font-size: 0.9rem; }
+    tbody tr:last-child td, tbody tr:last-child th { border-bottom: none; }
+    tbody th { font-weight: 700; }
+    .anio { display: block; margin-top: 0.15rem; font-weight: 400; font-size: 0.8rem; color: var(--muted); }
+    .turno {
+      display: block;
+      width: fit-content;
+      margin-bottom: 0.3rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+      background: var(--shift-bg);
+      color: var(--shift-ink);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .libre {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 680px) {
+      main { padding: 1.5rem 1rem; }
+      h1 { font-size: 1.75rem; margin-bottom: 1.25rem; }
+      .scroll { overflow-x: visible; background: transparent; border: none; border-radius: 0; }
+      table { min-width: 0; table-layout: auto; }
+      thead { display: none; }
+      tbody { display: block; }
+      tbody tr {
+        display: grid;
+        grid-template-rows: auto repeat(7, 1fr);
+        margin-bottom: 1rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      tbody tr:last-child { margin-bottom: 0; }
+      tbody th, tbody td { display: block; width: auto; }
+      tbody th {
+        padding: 0.75rem 1rem;
+        font-size: 1.05rem;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.6rem 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+      tbody tr:last-child td:last-child { border-bottom: none; }
+      tbody td::before {
+        content: attr(data-dia);
+        flex-shrink: 0;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+      .celda { display: flex; flex-direction: column; align-items: flex-end; gap: 0.25rem; }
+      .celda .turno { margin-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Horarios</h1>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Semana</th><th>Lunes</th><th>Martes</th><th>Miércoles</th>
+            <th>Jueves</th><th>Viernes</th><th>Sábado</th><th>Domingo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>26 de oct. – 1 de nov.<span class="anio">2026</span></th>
+            <td data-dia="Lunes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Martes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Miércoles"><div class="celda"><span class="turno">19:00 – 01:00</span></div></td><td data-dia="Jueves"><div class="celda"><span class="turno">16:30 – 22:30</span></div></td><td data-dia="Viernes"><div class="celda"><span class="turno">13:00 – 16:00</span><span class="turno">20:00 – 23:00</span></div></td><td data-dia="Sábado"><div class="celda"><span class="turno">12:30 – 15:30</span><span class="turno">20:30 – 23:30</span></div></td><td data-dia="Domingo"><div class="celda"><span class="turno">12:30 – 15:30</span><span class="turno">20:30 – 23:30</span></div></td>
+          </tr>
+          <tr>
+            <th>2 – 8 de noviembre<span class="anio">2026</span></th>
+            <td data-dia="Lunes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Martes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Miércoles"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Jueves"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Viernes"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Sábado"><div class="celda"><span class="libre">Libre</span></div></td><td data-dia="Domingo"><div class="celda"><span class="libre">Libre</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
